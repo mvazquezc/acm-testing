@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: reverse-words
+  labels:
+    app: reverse-words
+spec:
+  template:
+    spec:
+      containers:
+      - name: reverse-words
+        image: quay.io/mavazque/reversewords:v0.0.3
+        env:
+        - name: RELEASE
+          value: "Stage Release v0.0.3"
+        - $patch: replace
