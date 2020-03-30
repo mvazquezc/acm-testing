@@ -2,7 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: PlacementRule
 metadata:
   name: development-clusters
-  namespace: reversewords-app
+  namespace: gitops-apps
 spec:
   clusterLabels:
     matchLabels:

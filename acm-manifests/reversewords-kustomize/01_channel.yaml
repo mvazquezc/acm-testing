@@ -2,7 +2,7 @@ apiVersion: apps.open-cluster-management.io/v1
 kind: Channel
 metadata:
   name: mvazquez-gitops-github
-  namespace: reversewords-app
+  namespace: gitops-apps
 spec:
   type: GitHub
   pathname: https://github.com/mvazquezc/acm-testing.git
