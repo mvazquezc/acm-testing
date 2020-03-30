@@ -6,5 +6,5 @@ metadata:
 spec:
   clusterLabels:
     matchLabels:
-      env: pro
+      env: "pro"
   clusterReplicas: 1
