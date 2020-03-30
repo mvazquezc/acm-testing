@@ -3,25 +3,17 @@ kind: Subscription
 metadata:
   name: reversewords-prod-app-subscription
   namespace: reversewords-app
+  annotations:
+    apps.open-cluster-management.io/github-path: apps/reversewords/
+    apps.open-cluster-management.io/github-branch: prod
 spec:
   channel: reversewords-app/mvazquez-gitops-github
   placement:
     placementRef:
       kind: PlacementRule
       name: production-clusters
-    packageFilter:
-      filterRef:
-        name: reversewordspro-filter
 #timeWindow:
 #  type: "active"
 #  location: "Europe/Madrid"
 #  weekdays:                         # Optional, but required for configuring a time window. A list of days, defined as an array, indicates the days of the week when the time range is applied. For example: ["Monday", "Wednesday", "Friday"]
 #  hours:
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: reversewordspro-filter
-  namespace: reversewords-app
-data:
-  branch: prod
