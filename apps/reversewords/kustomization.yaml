@@ -1,0 +1,7 @@
+namespace: reverse-words-production
+bases:
+- github.com/mvazquezc/acm-testing/apps/reversewords?ref=config
+resources:
+- base/namespace.yaml
+patchesStrategicMerge:
+- overlays/deployment.yaml

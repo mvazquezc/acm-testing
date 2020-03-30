@@ -1,5 +1,0 @@
-bases:
-- github.com/mvazquezc/acm-testing?ref=config
-- namespace.yaml
-patchesStrategicMerge:
-- deployment.yaml
