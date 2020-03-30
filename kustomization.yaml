@@ -1,3 +1,4 @@
+namespace: reverse-words-stage
 bases:
 - github.com/mvazquezc/acm-testing?ref=config
 - namespace.yaml
