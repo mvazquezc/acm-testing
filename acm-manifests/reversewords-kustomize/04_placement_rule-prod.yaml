@@ -4,7 +4,10 @@ metadata:
   name: production-clusters
   namespace: gitops-apps
 spec:
-  clusterLabels:
+  clusterConditions:
+   - type: OK
+  clusterSelector:
+    matchExpressions: []
     matchLabels:
       env: "pro"
   clusterReplicas: 1
