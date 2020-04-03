@@ -31,3 +31,10 @@ spec:
     placementRef:
       kind: PlacementRule
       name: production-clusters
+  timewindow:
+    windowtype: "active"
+    location: "Europe/Madrid"
+    daysofweek: [ "Friday", "Saturday", "Sunday" ]
+    hours:
+      - start: "05:00PM"
+        end: "10:00PM"

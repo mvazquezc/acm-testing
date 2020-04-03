@@ -1,7 +1,7 @@
 apiVersion: app.k8s.io/v1beta1
 kind: Application
 metadata:
-  name: reversewords-pro-app
+  name: reversewords-all-app
   namespace: gitops-apps
 spec:
   componentKinds:
@@ -13,15 +13,15 @@ spec:
     - key: app
       operator: In
       values:
-      - reversewords-pro-app
+      - reversewords-all-app
 ---
 apiVersion: apps.open-cluster-management.io/v1
 kind: Subscription
 metadata:
-  name: reversewords-prod-app-subscription
+  name: reversewords-all-app-subscription
   namespace: gitops-apps
   labels:
-    app: reversewords-pro-app
+    app: reversewords-all-app
   annotations:
     apps.open-cluster-management.io/github-path: apps/reversewords/
     apps.open-cluster-management.io/github-branch: prod
@@ -30,4 +30,4 @@ spec:
   placement:
     placementRef:
       kind: PlacementRule
-      name: production-clusters
+      name: all-okay-clusters
