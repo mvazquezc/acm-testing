@@ -1,0 +1,46 @@
+apiVersion: policy.mcm.ibm.com/v1alpha1
+kind: Policy
+metadata:
+  name: policy-namespace-enforce
+  namespace: policies
+  annotations:
+    policy.mcm.ibm.com/standards: 
+    policy.mcm.ibm.com/categories: 
+    policy.mcm.ibm.com/controls: 
+spec:
+  complianceType: musthave
+  remediationAction: enforce
+  disabled: false
+  object-templates:
+    - complianceType: musthave
+      objectDefinition:
+        kind: Namespace 
+        apiVersion: v1
+        metadata:
+          name: testing-policies
+---
+apiVersion: mcm.ibm.com/v1alpha1
+kind: PlacementBinding
+metadata:
+  name: binding-policy-namespace-enforce
+  namespace: policies
+placementRef:
+  name: placement-policy-namespace-enforce
+  kind: PlacementRule
+  apiGroup: apps.open-cluster-management.io
+subjects:
+- name: policy-namespace-enforce
+  kind: Policy
+  apiGroup: policy.mcm.ibm.com
+---
+apiVersion: apps.open-cluster-management.io/v1
+kind: PlacementRule
+metadata:
+  name: placement-policy-namespace-enforce
+  namespace: policies
+spec:
+  clusterConditions:
+  - type: OK
+  clusterSelector:
+    matchExpressions:
+      - {key: cloud, operator: In, values: ["AWS"]}
