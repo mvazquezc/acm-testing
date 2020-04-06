@@ -1,4 +1,6 @@
 namespace: reverse-words-stage
+commonLabels:
+  app: reversewords-dev-app
 bases:
 - github.com/mvazquezc/acm-testing/apps/reversewords?ref=config
 resources:
