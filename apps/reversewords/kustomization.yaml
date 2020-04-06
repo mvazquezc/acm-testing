@@ -1,4 +1,6 @@
 namespace: reverse-words-production
+commonLabels:
+  app: reversewords-pro-app
 bases:
 - github.com/mvazquezc/acm-testing/apps/reversewords?ref=config
 resources:
